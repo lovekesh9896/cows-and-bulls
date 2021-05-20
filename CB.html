@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cows and Bulls</title>
+		<link
+			href="https://fonts.googleapis.com/css?family=Arbutus"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" type="text/css" href="CB.css" />
+	</head>
+	<body>
+		<!-- <h1>Cows and Bulls</h1> -->
+		<header>
+			<div id="leftSection" class="playerInfo">
+				<div class="profileIcon"><span>L</span></div>
+				<div class="dropdown">
+					<div class="P playerName">Lovekesh</div>
+					<div id="statics">
+						<div class="line">
+							<span class="type">Total Match</span>
+							<span class="value">0</span>
+						</div>
+						<div class="line">
+							<span class="type">Match Won</span>
+							<span class="value">0</span>
+						</div>
+						<div class="line">
+							<span class="type">Match Lost</span>
+							<span class="value">0</span>
+						</div>
+						<div class="line">
+							<span class="type">Match Draw</span>
+							<span class="value">0</span>
+						</div>
+						<div class="line">
+							<span class="type">Total Attempt</span>
+							<span class="value">0</span>
+						</div>
+						<div class="line">
+							<span class="type">Best Score</span>
+							<span class="value">0</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="center" class="gameName">Cows & Bulls</div>
+			<div id="rightSection" class="playerInfo">
+				<div class="profileIcon">C</div>
+				<div id="computer">Computer</div>
+			</div>
+		</header>
+
+		<main>
+			<div id="history">
+				<h4 class="heading">HISTORY</h4>
+				<div id="historyContainer">
+					<div class="line">
+						<span class="type">0000</span>
+						<span class="value">0B|0C</span>
+					</div>
+					<div class="line">
+						<span class="type">0000</span>
+						<span class="value">0B|0C</span>
+					</div>
+					<div class="line">
+						<span class="type">0000</span>
+						<span class="value">0B|0C</span>
+					</div>
+					<div class="line">
+						<span class="type">0000</span>
+						<span class="value">0B|0C</span>
+					</div>
+					<div class="line">
+						<span class="type">0000</span>
+						<span class="value">0B|0C</span>
+					</div>
+					<div class="line">
+						<span class="type">0000</span>
+						<span class="value">0B|0C</span>
+					</div>
+					<div class="line">
+						<span class="type">0000</span>
+						<span class="value">0B|0C</span>
+					</div>
+					<div class="line">
+						<span class="type">0000</span>
+						<span class="value">0B|0C</span>
+					</div>
+					<div class="line">
+						<span class="type">0000</span>
+						<span class="value">0B|0C</span>
+					</div>
+					<div class="line">
+						<span class="type">0000</span>
+						<span class="value">0B|0C</span>
+					</div>
+					<div class="line">
+						<span class="type">0000</span>
+						<span class="value">0B|0C</span>
+					</div>
+					<div class="line">
+						<span class="type">0000</span>
+						<span class="value">0B|0C</span>
+					</div>
+					<div class="line">
+						<span class="type">0000</span>
+						<span class="value">0B|0C</span>
+					</div>
+				</div>
+			</div>
+			<div id="mCenter">
+				<div id="input">
+					<input
+						type="text"
+						name="number"
+						placeholder="0000"
+						maxlength="4"
+						id="number"
+						autocomplete="off"
+						pattern="\d{4}"
+						autofocus
+						required
+					/>
+					<button id="enter" class="green main">Enter</button>
+				</div>
+
+				<div id="endButtons">
+					<button id="endMatch" class="red main" type="submit">
+						End Match
+					</button>
+					<button id="hint" class="black main" type="submit">
+						Get a Hint
+					</button>
+				</div>
+
+				<div id="changeTheme">
+					<button
+						id="changeButton"
+						class="green"
+						style="width: 250px"
+					>
+						Change Theme
+					</button>
+				</div>
+			</div>
+			<div id="current">
+				<h4 class="heading">CURRENT</h4>
+				<div id="dataContainer">
+					<div class="Cline line">
+						<span class="type">Player Name</span>
+						<span class="playerName value">Lovekesh</span>
+					</div>
+					<div class="Cline line">
+						<span class="type">Attempts</span>
+						<span class="value" id="attempt">0</span>
+					</div>
+					<div class="Cline line">
+						<span class="type">Best Attempt</span>
+						<span class="value" id="bestNumber">0000</span>
+					</div>
+					<div class="Cline line">
+						<span class="type">Best Guess</span>
+						<span class="value" id="bestScore">0B|0c</span>
+					</div>
+
+					<div class="Cline line">
+						<span class="type last">Last Attempt</span>
+					</div>
+					<div class="Cline line">
+						<span class="value last" id="lastCNumber">0000</span>
+					</div>
+					<div class="Cline line">
+						<span class="type last">Last Guess</span>
+					</div>
+					<div class="Cline line">
+						<span class="value last" id="lastCScore">0B|0c</span>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<div id="startPage">
+			<div id="backImage"></div>
+			<h1 class="gameName">Cows and Bulls</h1>
+			<div>
+				<input
+					type="text"
+					id="currPlayerName"
+					placeholder="Enter Player Name"
+					autocomplete="off"
+					spellcheck="false"
+					autofocus
+				/>
+			</div>
+
+			<div id="startButtons">
+				<button class="start green" id="singleMatch">
+					Single Match
+				</button>
+				<button class="start green" id="tournament">tournament</button>
+				<button class="start red" id="startMatch">Start Match</button>
+			</div>
+		</div>
+
+		<div id="matchOver">
+			<div id="backImage"></div>
+			<h1 id="matchResult"></h1>
+			<h1 id="forTournament"></h1>
+			<div id="startButtons">
+				<button id="startNewMatch" class="green end">
+					Start New Match
+				</button>
+			</div>
+		</div>
+
+		<div id="themePage">
+			<div id="backImage"></div>
+			<h1>Select Theme From Below</h1>
+			<div id="themeContainer">
+				<div class="theme">
+					<div class="preview">
+						<img src="basic.jpg" />
+					</div>
+					<button class="select"></button>
+				</div>
+				<div class="theme">
+					<div class="preview">
+						<img src="scotland.jpg" />
+					</div>
+					<button class="select"></button>
+				</div>
+				<div class="theme">
+					<div class="preview">
+						<img src="nfs.jpg" />
+					</div>
+					<button class="select"></button>
+				</div>
+				<div class="theme">
+					<div class="preview">
+						<img src="mountains.jpg" />
+					</div>
+					<button class="select"></button>
+				</div>
+				<div class="theme">
+					<div class="preview">
+						<img src="space.jpg" />
+					</div>
+					<button class="select"></button>
+				</div>
+				<div class="theme">
+					<div class="preview">
+						<img src="magic.jpg" />
+					</div>
+					<button class="select"></button>
+				</div>
+				<div class="theme">
+					<div class="preview">
+						<img src="fantasy.jpg" />
+					</div>
+					<button class="select"></button>
+				</div>
+				<div class="theme">
+					<div class="preview">
+						<img src="dolphins.jpg" />
+					</div>
+					<button class="select"></button>
+				</div>
+				<div class="theme">
+					<div class="preview">
+						<img src="dino.jpg" />
+					</div>
+					<button class="select"></button>
+				</div>
+				<div class="theme">
+					<div class="preview">
+						<img src="city.jpeg" />
+					</div>
+					<button class="select"></button>
+				</div>
+			</div>
+			<div id="abc">
+				<button class="green" id="startMatch1">Continue Match</button>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="CB.js"></script>
+	</body>
+</html>

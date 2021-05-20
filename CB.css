@@ -1,0 +1,542 @@
+/* -----varibles--- */
+:root {
+	--themeColor: #ff8080;
+	--themeWallpaper: url(magic.jpg);
+}
+/* ----end--------- */
+/* ----animation------- */
+@keyframes light {
+	from {
+		background-color: cornsilk;
+	}
+	to {
+		background-color: white;
+	}
+}
+
+/* ------end--------- */
+body {
+	font-family: sans-serif;
+	margin: 0;
+	background-image: var(--themeWallpaper);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+button {
+	outline: none;
+	cursor: pointer;
+}
+
+/* ---------header------- */
+header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-left: 4vw;
+	padding-right: 4vw;
+}
+
+#center {
+	align-self: inherit;
+	font-size: 45px;
+	/* color: #005f04; */
+	color: white;
+	font-family: arbutus;
+	margin: 15px;
+}
+
+#leftSection {
+	margin-left: 4vw;
+}
+#rightSection {
+	margin-right: 4vw;
+}
+
+.playerInfo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 35px;
+}
+
+.profileIcon {
+	width: 100px;
+	height: 100px;
+	background: linear-gradient(45deg, black, transparent),
+		linear-gradient(145deg, #44eaff, white);
+	background-size: 100% 100%, 0% 0%;
+	border-radius: 50%;
+	box-shadow: 0 0 3px 3px #e6e2e2;
+	color: white;
+	text-align: center;
+	font-size: 60px;
+	margin-bottom: 25px;
+	text-transform: capitalize;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: background 2s linear;
+}
+
+@keyframes backColor {
+	from {
+		background: linear-gradient(45deg, black, transparent);
+	}
+	to {
+		background: linear-gradient(145deg, #44eaff, transparent);
+	}
+}
+
+.profileIcon:hover {
+	background-size: 2% 1%, 98% 100%;
+}
+
+.P {
+	font-size: 30px;
+	margin-bottom: 10px;
+	font-size: 30px;
+	color: white;
+	text-transform: capitalize;
+}
+
+#computer {
+	font-size: 30px;
+	color: white;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+	position: relative;
+	display: block;
+	width: 150px;
+	text-align: center;
+}
+
+/* Dropdown Content (Hidden by Default) */
+#statics {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	width: 157px;
+	left: 0;
+}
+
+.dropdown:hover #statics {
+	display: initial;
+	background: bisque;
+	border: 1px solid black;
+	width: 190px;
+	height: 157px;
+	padding: 10px;
+	padding-bottom: 0;
+	overflow: hidden;
+}
+
+.line {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	margin-bottom: 2px;
+	padding-right: 5px;
+	padding-left: 5px;
+	border-bottom: 1px solid black;
+}
+
+.line:hover {
+	background-color: cornsilk;
+}
+
+#theme {
+	width: 2vw;
+	height: 5vh;
+	background-color: red;
+	margin-top: 26px;
+	right: 14px;
+	position: absolute;
+}
+
+/* ---------header -end--------- */
+
+/* ---------main--------- */
+main {
+	display: flex;
+	justify-content: space-between;
+	padding-right: 4vw;
+	padding-left: 4vw;
+	/* border: 2px solid black; */
+	margin-top: 30px;
+}
+
+/* ------history--------- */
+#history {
+	text-align: center;
+	background-color: whitesmoke;
+	padding: 10px;
+	box-shadow: 0 0 6px 2px #756868;
+}
+
+#historyContainer {
+	max-height: 250px;
+	overflow-y: scroll;
+}
+
+#history .line {
+	padding-left: 5px;
+	padding-right: 5px;
+	width: 190px;
+}
+
+/* --------history end--------- */
+
+/* -------input------------- */
+#mCenter {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#input {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#mCenter input {
+	width: 250px;
+	font-size: 45px;
+	text-align: center;
+	border: 2px solid var(--themeColor);
+	box-shadow: 2px 2px var(--themeColor);
+	border-radius: 40px;
+	outline: none;
+}
+
+input:valid {
+	color: green;
+}
+input:invalid {
+	color: red;
+}
+
+#endButtons {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 30px;
+	width: 450px;
+}
+
+.green {
+	margin-top: 40px;
+	width: 150px;
+	height: 40px;
+	font-size: 25px;
+	border-radius: 30px;
+	background: #008000a6;
+	color: white;
+	font-weight: 700;
+	border: 2px solid #008000;
+	cursor: pointer;
+}
+
+.green:hover {
+	box-shadow: 0px 9px #008000;
+}
+
+.green:active {
+	box-shadow: 0px 0px #008000;
+	transform: translateY(9px);
+}
+
+.red {
+	margin-top: 30px;
+	width: 180px;
+	height: 40px;
+	font-size: 25px;
+	border-radius: 30px;
+	background: #ff0000a6;
+	color: white;
+	font-weight: 700;
+	border: 2px solid #8c0000;
+}
+
+.red:hover {
+	box-shadow: 0px 9px #8c0000;
+}
+
+.red:active {
+	box-shadow: 0px 0px #8c0000;
+	transform: translateY(9px);
+}
+.black {
+	margin-top: 30px;
+	width: 180px;
+	height: 40px;
+	font-size: 25px;
+	border-radius: 30px;
+	background: #150606a6;
+	color: white;
+	font-weight: 700;
+	border: 2px solid #000000;
+}
+
+.black:hover {
+	box-shadow: 0px 9px #000000;
+}
+
+.black:active {
+	box-shadow: 0px 0px #000000;
+	transform: translateY(9px);
+}
+
+/* ------input end-------- */
+
+/* -----current --------- */
+#current {
+	text-align: center;
+	background-color: whitesmoke;
+	padding: 10px;
+	box-shadow: 0 0 6px 2px #756868;
+}
+#dataContainer {
+	display: grid;
+}
+.Cline {
+	width: 210px;
+}
+
+.heading {
+	font-size: 28px;
+	text-align: center;
+	margin: 5px;
+	margin-bottom: 10px;
+}
+.type {
+	font-size: 20px;
+	color: indigo;
+}
+
+.value {
+	font: 18px;
+	color: lightcoral;
+	text-transform: capitalize;
+}
+.last {
+	font-size: 30px;
+	font-style: italic;
+}
+/* -----end--------- */
+
+/* -----scroll bar -------- */
+/* width */
+::-webkit-scrollbar {
+	width: 2px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--themeColor);
+}
+
+/* -------start page----------- */
+@keyframes toptobottom {
+	0% {
+		height: 0;
+	}
+	40% {
+		height: 100vh;
+	}
+	87% {
+		height: 80vh;
+	}
+	93% {
+		height: 100vh;
+	}
+	98% {
+		height: 93vh;
+	}
+
+	to {
+		height: 100vh;
+	}
+}
+
+@keyframes bottomtotop {
+	0% {
+		height: 100vh;
+	}
+	to {
+		height: 0vh;
+	}
+}
+
+@keyframes toptobottomForTheme {
+	0% {
+		height: 0vh;
+	}
+	to {
+		height: 100vh;
+	}
+}
+
+#startPage {
+	z-index: 2;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#backImage {
+	position: absolute;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	filter: blur(5px);
+	background-image: var(--themeWallpaper);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	animation: toptobottom 1.5s ease-in-out;
+}
+
+.gameName {
+	text-align: center;
+	font-size: 45px;
+	/* animation: translateInY 2s ease-in-out; */
+}
+
+#currPlayerName {
+	width: 250px;
+	height: 30px;
+	border-radius: 20px;
+	text-align: center;
+	font-size: 20px;
+	border: 2px solid darkgreen;
+	outline: none;
+	font-style: italic;
+	text-transform: capitalize;
+}
+
+#currPlayerName:focus {
+	transition: all 0.5s ease-in-out;
+}
+#startButtons {
+	/* animation: translateInY 2s ease-in-out; */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#startButtons button {
+	margin-top: 60px;
+	width: 250px;
+	/* animation: rotateclock 2s ease-in-out; */
+}
+
+/* -------match over-------- */
+
+#matchOver {
+	z-index: 2;
+	position: fixed;
+	top: 0;
+	width: 100vw !important;
+	height: 0;
+	overflow: hidden;
+}
+
+#matchResult {
+	text-align: center;
+	color: white;
+}
+
+#forTournament {
+	text-align: center;
+	color: white;
+}
+
+#startNewMatch {
+	margin-top: 60px;
+	width: 250px;
+}
+
+#playerName {
+	text-align: center;
+}
+
+/*--------theme-----------*/
+h1 {
+	text-align: center;
+	color: white;
+	font-size: 45px;
+	font-family: inherit;
+}
+
+#themePage {
+	background-image: var(--themeWallpaper);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 6;
+	width: 100vw;
+	height: 0;
+	overflow: hidden;
+}
+
+#themeContainer {
+	margin: 35px auto;
+	margin-bottom: 0px;
+	width: 80vw;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.preview {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.preview img {
+	width: 100%;
+	height: 100%;
+	background-position: center;
+}
+
+.theme {
+	position: relative;
+	margin-right: 60px;
+	margin-top: 40px;
+}
+
+.select {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	background: transparent;
+	border: none;
+	outline: none;
+	box-shadow: inset 0px 0px 10px 2px black, 0px 0px 10px 2px white;
+}
+
+.select:hover {
+	box-shadow: 0px 0px 12px 4px white;
+}
+#abc {
+	display: flex;
+	justify-content: center;
+}
+
+#startMatch1 {
+	margin-left: -55px;
+	width: 300px;
+}
